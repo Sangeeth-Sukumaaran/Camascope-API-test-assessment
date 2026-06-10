@@ -1,32 +1,31 @@
-<<<<<<< HEAD
 # Restful Booker API Automation
 
-This project contains automated API tests for the Restful Booker API.
+This project contains API automation tests for the Restful Booker API as part of the Camascope assessment.
 
 ## Tech Stack
 
-- Python
-- Pytest
-- Requests
-- JSON Schema
-- Pytest HTML Reporting
-- GitHub Actions
+* Python
+* Pytest
+* Requests
+* JSON Schema validation
+* Pytest HTML report
+* GitHub Actions
 
 ## Project Structure
 
 ```text
-tests/                 Automated test cases
-schemas/               API response schemas
-utils/                 Reusable API client and schema validator
+tests/                 API test cases
+schemas/               JSON schemas for response validation
+utils/                 Common API client and helper methods
 test_data/             Test payloads
-.github/workflows/     CI pipeline
-.vscode/               VS Code pytest configuration
-conftest.py            Pytest fixtures and shared setup
-pytest.ini             Pytest configuration
-reports/               HTML test report output
+conftest.py            Shared pytest fixtures
+pytest.ini             Pytest settings
+requirements.txt       Project dependencies
 ```
 
 ## Setup
+
+Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
@@ -38,73 +37,34 @@ Windows:
 venv\Scripts\activate
 ```
 
-Mac/Linux:
-
-```bash
-source venv/bin/activate
-```
-
 Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run Tests
+## Running the Tests
 
 ```bash
 pytest
 ```
 
-The project is configured to automatically generate:
-
-```text
-reports/report.html
-```
-
-You can also run explicitly:
+To generate the HTML report manually:
 
 ```bash
 pytest --html=reports/report.html --self-contained-html
 ```
 
-## Test Data Cleanup
+## Notes
 
-The `booking` fixture in `conftest.py` creates a booking before a test and deletes it after the test using pytest's `yield` fixture pattern.
-
-## Booking Test Data Reference
-
-A detailed description of the booking payloads used by tests is available in `test_data/booking_data.md`.
-
-## Exploratory Finding Tests
-
-Additional exploratory negative tests are in:
-
-```text
-tests/test_exploratory_findings.py
-```
-
-Some tests are marked with `pytest.mark.xfail` because they document known behaviours of the public demo API without failing the whole suite.
+* The tests use the public Restful Booker demo API.
+* Some exploratory tests are marked as expected failures where the API behaviour is weak or inconsistent.
+* Test data is kept separately to make the tests easier to update.
+* The booking fixture creates test data before the test and cleans it up afterwards where possible.
 
 ## Assumptions
 
-1. The public API is available during test execution.
-2. Authentication token remains valid for the test run.
-3. Created bookings can be deleted after test execution.
-4. Some validation behaviour may be weak because this is a public demo API.
-5. Performance testing is out of scope.
-6. The API documentation does not specify minimum or maximum lengths for firstname and lastname. For demonstration of contract validation, minLength=1 and maxLength=100 were assumed as reasonable business constraints.
-
-## CI/CD
-
-The CI version includes:
-
-```text
-.github/workflows/api-tests.yml
-```
-
-It installs dependencies, runs pytest, generates an HTML report, and uploads the report as a GitHub Actions artifact.
-=======
-# Camascope-test-assessment
-API test assessment for Camascope
->>>>>>> d23f76b167f651e3891c7ed748775234f7001c6d
+* The public API is available during test execution.
+* Test bookings can be created, updated, and deleted.
+* Performance testing is not included in this assessment.
+* Some validation rules are assumed because the API documentation does not define all limits clearly.
