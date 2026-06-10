@@ -1,0 +1,107 @@
+
+{
+    "valid_booking": {
+        "firstname": "John",
+        "lastname": "Smith",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-01-01",
+            "checkout": "2026-01-05"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "updated_booking": {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "totalprice": 150,
+        "depositpaid": false,
+        "bookingdates": {
+            "checkin": "2026-02-01",
+            "checkout": "2026-02-05"
+        },
+        "additionalneeds": "Dinner"
+    },
+    "partial_update": {
+        "firstname": "UpdatedName",
+        "additionalneeds": "Late checkout"
+    },
+    "invalid_booking_missing_firstname": {
+        "lastname": "Smith",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-01-01",
+            "checkout": "2026-01-05"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "negative_price_booking": {
+        "firstname": "Negative",
+        "lastname": "Price",
+        "totalprice": -100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-03-01",
+            "checkout": "2026-03-05"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "invalid_date_logic_booking": {
+        "firstname": "Invalid",
+        "lastname": "Dates",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-12-31",
+            "checkout": "2026-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "invalid_boolean_booking": {
+        "firstname": "Invalid",
+        "lastname": "Boolean",
+        "totalprice": 100,
+        "depositpaid": "yes",
+        "bookingdates": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-05"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "xss_booking": {
+        "firstname": "<script>alert('xss')</script>",
+        "lastname": "Security",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-05-01",
+            "checkout": "2026-05-05"
+        },
+        "additionalneeds": "<img src=x onerror=alert('xss')>"
+    },
+    "long_name_booking": {
+        "firstname": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "lastname": "Length",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-06-01",
+            "checkout": "2026-06-05"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "malformed_type_booking": {
+        "firstname": {
+            "bad": "object"
+        },
+        "lastname": "BadInput",
+        "totalprice": "not-a-number",
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "not-a-date",
+            "checkout": "2026-07-05"
+        },
+        "additionalneeds": "Breakfast"
+    }
+}
