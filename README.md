@@ -62,9 +62,3 @@ pytest --html=reports/report.html --self-contained-html
 * Test data is kept separately to make the tests easier to update.
 * The booking fixture creates test data before the test and cleans it up afterwards where possible.
 
-## Assumptions
-
-* The public API is available during test execution.
-* Test bookings can be created, updated, and deleted.
-* Performance testing is not included in this assessment.
-* Some validation rules are assumed because the API documentation does not define all limits clearly.
