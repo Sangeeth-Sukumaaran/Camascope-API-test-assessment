@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Restful Booker API Automation
 
 This project contains automated API tests for the Restful Booker API.
@@ -103,3 +104,7 @@ The CI version includes:
 ```
 
 It installs dependencies, runs pytest, generates an HTML report, and uploads the report as a GitHub Actions artifact.
+=======
+# Camascope-test-assessment
+API test assessment for Camascope
+>>>>>>> d23f76b167f651e3891c7ed748775234f7001c6d
