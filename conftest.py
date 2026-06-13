@@ -73,3 +73,11 @@ def booking(api_client, authenticated_client, booking_data):
     assert cleanup_response.status_code in [201, 404, 405], (
         f"Unexpected cleanup response: {cleanup_response.status_code}"
     )
+# # @pytest.fixture
+# def dynamic_booking_payload(booking_data):
+#     payload = booking_data["valid_booking"].copy()
+
+#     payload["firstname"] = f"John_{uuid4().hex[:6]}"
+#     payload["lastname"] = f"Smith_{uuid4().hex[:6]}"
+
+# return payload
